@@ -65,7 +65,50 @@ Enables the compiler to skip recomposition even with unstable parameters by usin
     }
     ```
 
-## 4. Debugging & Metrics
+## 4. State Hoisting & ViewModel Patterns
+
+Passing a ViewModel directly to a Composable can hinder stability, reusability, and testability. Instead, use **State Hoisting** to create "Stateless" Composables.
+
+### The "Stateless" Screen Pattern
+Separate your UI into a **Stateful** entry point and a **Stateless** UI implementation.
+
+1.  **Stateful (Entry Point):** Handles ViewModel initialization, state collection, and navigation.
+2.  **Stateless (UI):** Receives only the state and lambdas for actions.
+
+```kotlin
+// Stateful Entry Point (e.g., in Navigation Entry)
+@Composable
+fun UserProfileScreen(viewModel: UserViewModel = viewModel()) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    
+    // Pass only state and callbacks
+    UserProfileContent(
+        uiState = uiState,
+        onRefresh = { viewModel.refresh() }
+    )
+}
+
+// Stateless UI Implementation (Easy to Preview & Test)
+@Composable
+fun UserProfileContent(
+    uiState: UserUiState,
+    onRefresh: () -> Unit
+) {
+    // UI Logic here
+}
+```
+
+### Why This Improves Stability
+*   **Decoupling:** The UI doesn't depend on the ViewModel implementation.
+*   **Preview Support:** You can easily create previews with static `UiState` objects.
+*   **Explicit State:** The Compose compiler can more easily verify the stability of simple data classes (`UiState`) compared to complex ViewModel instances.
+
+### Choosing the Right Pattern
+*   **Small/Internal Screens:** Passing ViewModel might be okay for speed.
+*   **Standard Production Screens:** Pass a single `UiState` data class (ensure it's `@Immutable`).
+*   **Highly Reusable Components:** Pass plain values (e.g., `title: String`, `onClick: () -> Unit`).
+
+## 5. Debugging & Metrics
 
 ### Enable Compiler Reports
 Identify "unstable" suspects by generating metrics reports.

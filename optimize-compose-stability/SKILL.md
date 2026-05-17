@@ -22,6 +22,9 @@ For detailed rules and patterns, refer to [references/stability-guidelines.md](r
 *   **Refactor Data Models:** 
     *   Replace `java.util.Date` with `java.time.Instant` or `Long`.
     *   Convert standard collections to `ImmutableList`, `ImmutableSet`, or `ImmutableMap` from `kotlinx.collections.immutable`.
+*   **Apply State Hoisting:**
+    *   Separate **Stateful** entry points from **Stateless** UI implementation.
+    *   Avoid passing ViewModels directly to reusable Composables; pass `@Immutable` UI State objects and action lambdas instead.
 *   **Apply Stability Annotations:** Use `@Immutable` for immutable models and `@Stable` for observable or predictable mutable types.
 *   **Configure Compiler:**
     *   Set up `compose_stability.conf` for external library types.
