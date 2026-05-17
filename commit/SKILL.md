@@ -47,4 +47,8 @@ Follow these rules to generate a commit message based on the provided `git diff`
 2. Determine the appropriate type and scope. If multiple types apply, prioritize `feat` or `fix`.
 3. Write a concise subject.
 4. If the changes are complex or introduce breaking changes, provide a body and footer.
-5. Output ONLY the commit message text. No markdown blocks, no extra commentary.
+5. Present the generated commit message to the user and ask for their preference using `ask_user` with the following options:
+   - **Commit Now**: Use `run_shell_command` to execute `git commit -m "<message>"` using the generated message.
+   - **Regenerate**: Re-analyze the diff and generate a new commit message.
+   - **Cancel**: Do not commit and end the process.
+6. Output ONLY the commit message text as the final result if "Commit Now" is selected or if the user asks for just the text. No markdown blocks, no extra commentary.
