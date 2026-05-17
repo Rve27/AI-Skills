@@ -1,6 +1,6 @@
 ---
 name: readme-updater
-description: Automates the maintenance and synchronization of enterprise-grade README.md files. Use this to ensure professional documentation that reflects the current tech stack, directory structure, build instructions, and community standards (Security, Contributing, Support).
+description: Automates the maintenance and synchronization of enterprise-grade README.md files. Use this to ensure professional documentation that reflects the current tech stack, directory structure, build instructions, and community standards (Contributing, Support).
 ---
 
 # Readme Updater (Enterprise Grade)
@@ -13,7 +13,7 @@ This skill provides a structured, professional workflow for keeping project `REA
 ### 1. Discovery & Inventory
 Scan the workspace to identify all existing documentation and metadata:
 - **Root README**: The primary entry point.
-- **Support Docs**: Identify `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, and `LICENSE`.
+- **Support Docs**: Identify `CONTRIBUTING.md`, and `LICENSE`.
 - **Module READMEs**: (e.g., `rust/README.md`, `app/README.md`) For specialized sub-system details.
 
 ### 2. Deep Codebase Analysis
@@ -29,7 +29,6 @@ Follow the template in `references/readme-template.md` with these enhancements:
 - **Visuals & Badges**: Ensure badges use current repository paths and reflect real CI states.
 - **Community Standards**: 
   - If `CONTRIBUTING.md` exists, link it prominently.
-  - Populate the **Security** section with instructions to refer to `SECURITY.md`.
   - Provide a clear **Support** section with links to Issues, Discussions, or contact methods found in the project.
 - **Architecture**: Move beyond simple descriptions. Briefly explain *why* certain patterns (e.g., Clean Architecture, MVVM) were chosen.
 
@@ -43,7 +42,7 @@ Follow the template in `references/readme-template.md` with these enhancements:
 ### Root README.md
 - **Professional Header**: Name, description, and high-signal badges.
 - **Onboarding**: Focus on the fastest path from `git clone` to a running build.
-- **Governance**: Include the Contributing, Security, and License sections.
+- **Governance**: Include the Contributing and License sections.
 
 ### Technical/Module README.md
 - **Deep Dive**: Focus on implementation details, performance considerations, and internal API usage.

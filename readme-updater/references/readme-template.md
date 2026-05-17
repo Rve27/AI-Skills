@@ -16,7 +16,6 @@
 - [⚙️ Getting Started](#-getting-started)
 - [🏗️ Architecture](#-architecture)
 - [🤝 Contributing](#-contributing)
-- [🔒 Security](#-security)
 - [💬 Support](#-support)
 - [📜 License](#-license)
 
@@ -74,11 +73,6 @@ project-root/
 
 ## 🤝 Contributing
 We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get started, our branching strategy, and the PR review process.
-
-All contributors are expected to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## 🔒 Security
-If you discover a security vulnerability, please follow our [Security Policy](SECURITY.md) to report it responsibly. We take security seriously and will respond promptly to all reports.
 
 ## 💬 Support
 - **Issues**: [GitHub Issues](https://github.com/user/repo/issues) for bug reports and feature requests.
