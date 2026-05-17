@@ -8,7 +8,7 @@ AI-Skills is a repository of reusable skills that extend the capabilities of the
 ## ✨ Key Features
 - **Git Commit Generation**: Automatically generates descriptive, Conventional Commits-compliant messages based on git diffs.
 - **README Maintenance**: Provides a structured workflow for keeping project documentation synchronized with the evolving codebase.
-- **Automated Formatting**: Streamlines code tidying for Kotlin, Gradle, and Rust using Spotless and Cargo FMT.
+- **Code Optimization**: Tidies, cleans, and optimizes code by removing dead code and reducing unnecessary repetition.
 - **Standardized Templates**: Includes reference templates (e.g., for READMEs) to ensure consistency across projects.
 
 ## 🛠️ Tech Stack
@@ -19,9 +19,9 @@ AI-Skills is a repository of reusable skills that extend the capabilities of the
 ## 📂 Project Structure
 ```text
 AI-Skills/
+├── code-optimizer/   # Code formatting, cleaning, and optimization skill
 ├── commit/           # Git commit message generation skill
-├── readme-updater/   # README maintenance and synchronization skill
-└── spotless-clean/   # Code formatting and tidying skill
+└── readme-updater/   # README maintenance and synchronization skill
 ```
 
 ## ⚙️ Getting Started
